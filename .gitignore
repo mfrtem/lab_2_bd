@@ -1,0 +1,20 @@
+# файлы сборки
+build/
+
+# файлы базы данных
+*.dat
+*.idx
+*.bak
+*.tmp
+
+# исполняемые файлы
+LibraryDB
+HashTest
+DatabaseTest
+BTreeTest
+
+# настройки редактора
+.vscode/
+
+# системные файлы macOS
+.DS_Store
