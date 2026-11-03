@@ -11,6 +11,7 @@ add_executable(LibraryDB
     main.cpp
     database.cpp
     hashindex.cpp
+    btree.cpp
 )
 
 target_link_libraries(LibraryDB PRIVATE Qt6::Widgets)
@@ -24,9 +25,17 @@ add_executable(DatabaseTest
     database_test.cpp
     database.cpp
     hashindex.cpp
+    btree.cpp
 )
 
 add_executable(BTreeTest
     btree_test.cpp
+    btree.cpp
+)
+
+add_executable(SeedDatabase
+    seed_database.cpp
+    database.cpp
+    hashindex.cpp
     btree.cpp
 )

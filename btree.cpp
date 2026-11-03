@@ -79,6 +79,29 @@ void BPlusTree::close() {
     }
 }
 
+// очищаем дерево и создаём его заново
+bool BPlusTree::clear() {
+    if (filename.empty()) {
+        return false;
+    }
+
+    string currentFilename = filename;
+
+    close();
+
+    // очищаем файл дерева
+    ofstream clearFile(currentFilename, ios::binary | ios::trunc);
+
+    if (!clearFile.is_open()) {
+        return false;
+    }
+
+    clearFile.close();
+
+    // открываем пустой файл, чтобы создать новое дерево
+    return open(currentFilename);
+}
+
 // читаем узел по смещению
 bool BPlusTree::readNode(long long offset, BTreeNode& node) {
     if (!file.is_open() || offset < static_cast<long long>(sizeof(BTreeHeader))) {

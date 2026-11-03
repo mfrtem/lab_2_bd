@@ -53,6 +53,8 @@ public:
     bool open(const string& filename);
     void close();
 
+    bool clear();
+
     bool insert(const char* author, int id);
     bool findByAuthor(const char* author, vector<int>& ids);
 };
